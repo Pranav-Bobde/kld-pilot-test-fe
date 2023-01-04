@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <!-- content -->
+    Cart Page
   </q-page>
 </template>
 
