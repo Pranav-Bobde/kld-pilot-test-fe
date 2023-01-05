@@ -10,8 +10,8 @@ function isAuthenticated(to: RouteLocationNormalized) {
       }
     }
   } else if (to.path.startsWith('/cart')) {
-    if (to.query.token && to.query.orderId) {
-      localStorage.setItem('order_id', to.query.orderId as string);
+    if (to.query.token && to.query.order_id) {
+      localStorage.setItem('order_id', to.query.order_id as string);
       localStorage.setItem('token', to.query.token as string);
     }
   } else if (to.path.startsWith('/myaccount')) {
