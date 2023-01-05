@@ -1,19 +1,17 @@
 import { boot } from 'quasar/wrappers';
 import { RouteLocationNormalized } from 'vue-router';
 
-// "async" is optional;
-// more info on params: https://v2.quasar.dev/quasar-cli/boot-files
-
 function isAuthenticated(to: RouteLocationNormalized) {
   if (to.path.startsWith('/store')) {
     if (to.params.storeId) {
-      localStorage.setItem('token', to.params.storeId as string);
+      localStorage.setItem('store_id', to.params.storeId as string);
       if (to.query.token) {
         localStorage.setItem('token', to.query.token as string);
       }
     }
   } else if (to.path.startsWith('/cart')) {
     if (to.query.token && to.query.orderId) {
+      localStorage.setItem('order_id', to.query.orderId as string);
       localStorage.setItem('token', to.query.token as string);
     }
   } else if (to.path.startsWith('/myaccount')) {
